@@ -30,3 +30,21 @@ variable "enviroment" {}
 variable "max_size" {}
 variable "min_size" {}
 variable "desired_capacity" {}
+variable "instance_type" {}
+variable "ecs_aws_ami" {}
+
+variable "private_subnet_cidrs" {
+    type = list
+}
+
+variable "public_subnet_cidrs"{
+    type = list
+}
+
+variable "availability_zones"{
+    type = list
+}
+
+output "default_alb_target_group" {
+    value = module.ecs.default_alb_target_group
+}
