@@ -19,3 +19,14 @@ module "ecs" {
     instance_type = var.instance_type
     ecs_aws_ami = var.ecs_aws.ami
 }
+
+resource "aws_key_pair" "ecs"{
+    key_name = "ecs-key-${var.enviroment}"
+    public_key = "key_deleted_by_security"
+}
+
+variable "vpc_cidr" {}
+variable "enviroment" {}
+variable "max_size" {}
+variable "min_size" {}
+variable "desired_capacity" {}
